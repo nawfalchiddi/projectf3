@@ -21,4 +21,18 @@ while true; do
     elif [ "$opt" == "2" ]; then
         echo "--- Student List ---"
 	 cat "$students.txt
+	     elif [ "$opt" == "3" ]; then
+        read -p "Search name: " searchname
+        if grep -q "$searchname" "$students.txt"; then
+            grep "$searchname" "$students.txt"
+        else
+            echo "Not Found"
+        fi
+    elif [ "$opt" == "4" ]; then
+        break
+    else
+        echo "Invalid option."
+    fi
+done
+
 #zakaria 	 
